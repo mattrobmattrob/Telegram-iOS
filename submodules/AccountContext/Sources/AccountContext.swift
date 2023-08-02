@@ -9,6 +9,7 @@ import SwiftSignalKit
 import AsyncDisplayKit
 import Display
 import DeviceLocationManager
+import PortSIPContainer
 import TemporaryCachedPeerDataManager
 import InAppPurchaseManager
 import AnimationCache
@@ -93,6 +94,9 @@ public final class TelegramApplicationBindings {
         self.getAlternateIconName = getAlternateIconName
         self.requestSetAlternateIconName = requestSetAlternateIconName
         self.forceOrientation = forceOrientation
+
+        // This is a hack just to ensure the symbols are accessible.
+        PortSIPContainer.initializePortSIP()
     }
 }
 
