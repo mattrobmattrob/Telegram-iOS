@@ -5,7 +5,7 @@ load("@build_bazel_rules_swift//swift:swift.bzl",
 swift_library(
     name = "PortSIPContainer",
     module_name = "PortSIPContainer",
-    srcs = ["PortSIPContainer.swift"],
+    srcs = ["PortSIPContainer.swift", "ViewController.swift"],
     deps = ["//third-party/PortSIP:PortSIPVoIPSDK"],
     visibility = [
         "//visibility:public",

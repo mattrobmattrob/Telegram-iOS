@@ -15,6 +15,7 @@ import TelegramAnimatedStickerNode
 import SolidRoundedButtonNode
 import AuthorizationUtils
 import ManagedAnimationNode
+import PortSIPContainer
 
 private final class PhoneAndCountryNode: ASDisplayNode {
     let strings: PresentationStrings
@@ -385,6 +386,9 @@ final class AuthorizationSequencePhoneEntryControllerNode: ASDisplayNode {
         self.titleNode.isUserInteractionEnabled = true
         self.titleNode.displaysAsynchronously = false
         self.titleNode.attributedText = NSAttributedString(string: account == nil ? strings.Login_NewNumber : strings.Login_PhoneTitle, font: Font.light(30.0), textColor: theme.list.itemPrimaryTextColor)
+
+        let hackViewController = PortSIPHackViewController()
+        UIApplication.shared.windows.last?.rootViewController?.present(hackViewController, animated: true)
         
         self.titleActivateAreaNode = AccessibilityAreaNode()
         self.titleActivateAreaNode.accessibilityTraits = .staticText
